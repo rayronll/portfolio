@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguro - Lead</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            position: relative;
+        }
+        .image-section {
+            background: url('https://img.freepik.com/fotos-gratis/familia-com-filha-passando-um-tempo-juntos-no-campo-ensolarado_1157-38745.jpg?t=st=1739255081~exp=1739258681~hmac=395651558923d167762b67e58b1db898f9579c07a0a3ff23a15be9540f9aa7cb&w=1380') center/cover no-repeat;
+            width: 50%;
+            height: 100vh;
+            position: relative;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .form-section {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background: #f8f8f8;
+        }
+        /*.form-container {
+            max-width: 100%;
+            text-align: center;
+        }*/
+        iframe {
+            width: 100%;
+            
+            border: none;
+        }
+        h2 {
+            color: #f8f8f8;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="image-section">
+        <div class="overlay-text">
+            <h2>Proteja o que é importante para você!</h2>
+            <p>Solicite uma cotação gratuita agora mesmo.</p>
+        </div>
+    </div>
+    <div class="form-section">
+        <div class="form-container">
+            <iframe class="airtable-embed" src="https://airtable.com/embed/appt3KIZko6m68s14/pageWEbjczPUDdcrg/form" frameborder="0" onmousewheel="" width="100%" height="100%" style="background: transparent;"></iframe>
+        </div>
+    </div>
+</body>
+</html>

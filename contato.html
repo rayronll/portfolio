@@ -1,52 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário para Discord</title>
+    <title>Rayron Leal - Projetos e Serviços</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/uikit.min.css" />
 </head>
-<body>
-    <h1>Enviar informações para o Discord</h1>
-    <form id="discordForm">
+<body style="background-image: url(img/bg_branco.jpg);">
+    <div class="uk-section uk-section-default uk-text-center">
+        <div class="uk-container">
+            <div>
+                <img class="uk-border-circle" src="img/rayron.jpg" width="150" height="150" alt="Rayron Leal">
+                <span class="uk-text-secondary uk-heading-small">Rayron Leal</span>
+                <span class="uk-text-secondary uk-text-small">Web Developer | Design UI/UX</span><br>
+            </div>
+    
+        </div>
+    </div>
+    <form id="myForm">
         <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name" required>
+        <br>
         <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
+        <textarea id="message" name="message" required></textarea>
+        <br>
         <button type="submit">Enviar</button>
-    </form>
-
-    <script>
-        document.getElementById('discordForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const message = document.getElementById('message').value;
-
-            // URL do webhook
-            const webhookURL = "https://discord.com/api/webhooks/1310439363263598594/s9rZYsgIJOOy3DQjZjgGlfwpiESIjMRgtARRpBEwlruMXXvP9QbypEyelRmTU3hghhXc";
-
-            // Corpo da mensagem
-            const payload = {
-                content: `**${name} diz:**\n${message}`
-            };
-
-            // Enviar para o webhook
-            try {
-                const response = await fetch(webhookURL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                });
-                if (response.ok) {
-                    alert("Mensagem enviada com sucesso!");
-                } else {
-                    console.error("Erro no envio:", response.status, response.statusText);
-                    alert(`Erro ao enviar mensagem: ${response.status}`);
-                }
-            } catch (error) {
-                console.error("Erro:", error);
-                alert("Erro de conexão.");
+      </form>
+      
+      <script>
+        document.getElementById('myForm').addEventListener('submit', async function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+          
+          const name = document.getElementById('name').value;
+          const message = document.getElementById('message').value;
+      
+          try {
+            const response = await fetch('http://127.0.0.1:5500/enviar', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ name, message })
+            });
+      
+            if (response.ok) {
+              alert('Mensagem enviada com sucesso!');
+            } else {
+              const error = await response.json();
+              alert(`Erro: ${error.error}`);
             }
+          } catch (err) {
+            console.error('Erro:', err);
+            alert('Erro ao enviar mensagem.');
+          }
         });
-    </script>
+      </script>
+      
+    
 </body>
 </html>

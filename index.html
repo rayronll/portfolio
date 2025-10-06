@@ -11,11 +11,14 @@
             background-color: #f8f9fa;
         }
         header {
-            background-color: #343a40;
+            background-color: #27292b;
             color: white;
-            padding: 20px 0;
+            padding: 2%;
         }
         header h1 {
+            text-align: center;
+        }
+        h5 {
             text-align: center;
         }
         .section-title {
@@ -28,29 +31,152 @@
             height: auto;
             padding: 5px;
         }
+
+        .btn {
+            background: #27292b;
+            color: #f8f9fa;
+        }
+
+        .btn:hover {
+            background: #ffaa00;
+        }
+
+        #servicos {
+        margin: 50px 0;
+        }
+
+        .pacotes {
+            display:inline;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .pacote {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            margin: 1%;
+            /* border: 1px solid #111; */
+        }
+
+        .pacote.destaque {
+            border: 2px solid #ffcc00;
+            background: #fffbe6;
+    }
+
+        #sobre {
+        background: #f8f9fa;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 3% ;
+        }
+
+
+        #sobre img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #ffcc00;
+        }
+
+
+        #sobre .texto {
+        flex: 1;
+        min-width: 280px;
+        }
+
+
+        #sobre h2 {
+        margin-bottom: 20px;
+        text-align: left;
+        }
+
+
+        #sobre p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        }
+
+
+        .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        }
+
+
+        .skill {
+        background: #ffcc00;
+        color: #111;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        }
+
+        #contato {
+            background-color: #ffcc00;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 3%
+            /* margin-top: 3%;
+            margin-bottom: 3%; */
+        }
+
         footer {
-            background-color: #343a40;
+            background-color: #27292b;
             color: white;
             text-align: center;
             padding: 10px 0;
+        }
+
+        footer a {
+        color: #ffcc00;
+        text-decoration: none;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-
-        <h1>Rayron Leal Lima</h1>
-        <p class="text-center">Web Developer | Designer Gráfico</p>
-    </div>
+    <div class="container my-5">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-center text-md-start gap-4">
+      
+          <!-- Logo -->
+          <img src="img/logo_rll.png" 
+               alt="Logo Rayron Leal" 
+               class="img-fluid"
+               style="width: 120px; height: auto;">
+      
+          <!-- Texto -->
+          <div class="d-flex flex-column align-items-center align-items-md-start">
+            <h1 class="mb-1 fw-bold" style="font-size: 2.2rem;">Rayron Leal Lima</h1>
+            <p class="text-secondary mb-0">Web Developer | Designer Gráfico</p>
+          </div>
+      
+        </div>
+      
+        <div class="mt-4 text-center text-md-start">
+          <h5 class="fw-semibold">Conecto criatividade e tecnologia para dar vida a marcas.</h5>
+          <p class="text-align text-center">Desenvolvimento web, identidade visual e design estratégico — tudo para destacar você no digital.</p>
+        </div>
+      </div>
+      
+      
 </header>
 
 <main class="container mt-4">
 
     <!-- Portfólio -->
     <section id="portfolio">
-        <h2 class="section-title">My Works (EM CONSTRUÇÃO)</h2>
+        <h2 class="section-title">My Works</h2>
         <div class="row">
             <div class="col-md-6 portfolio-item">
                 <img src="img/capa_dub.png" alt="Imagem do projeto" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalProjeto1">   
@@ -62,7 +188,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" style="position:relative;margin-left: 95%; margin-top: 1%;"></button>
                                 
                                 <div class="modal-body" style="text-align: center;">
-                                   <h2>Contrução do DesignUI/UX</h2>
+                                   <!-- <h2>Contrução do DesignUI/UX</h2> -->
                                    <p></p>
                                    <img src="img/modal/dub/DUB_BARBER1.png" class="img-fluid">
                                    <img src="img/modal/dub/DUB_MECANICA.png" class="img-fluid">
@@ -88,7 +214,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" style="position:relative;margin-left: 95%; margin-top: 1%;"></button>
                             
                             <div class="modal-body" style="text-align: center;">
-                               <h2>Contrução do DesignUI/UX</h2>
+                               <!-- <h2>Contrução do DesignUI/UX</h2> -->
                                <p></p>
                                <img src="img/modal/rotabsb/1rotabsb.png" class="img-fluid">
                                <img src="img/modal/rotabsb/2rotabsb.png" class="img-fluid">
@@ -117,7 +243,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" style="position:relative;margin-left: 95%; margin-top: 1%;"></button>
                             
                             <div class="modal-body" style="text-align: center;">
-                               <h2>Contrução do DesignUI/UX</h2>
+                               <!-- <h2>Contrução do DesignUI/UX</h2> -->
                                <p></p>
                                <img src="img/modal/saylla/1saylla.png" class="img-fluid">
                                <img src="img/modal/saylla/2saylla.png" class="img-fluid">
@@ -146,13 +272,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" style="position:relative;margin-left: 95%; margin-top: 1%;"></button>
                             
                             <div class="modal-body" style="text-align: center;">
-                               <h2>Contrução do DesignUI/UX</h2>
+                               <!-- <h2>Contrução do DesignUI/UX</h2> -->
                                <p></p>
-                               <img src="img/modal/dub/DUB_BARBER1.png" class="img-fluid">
-                               <img src="img/modal/dub/DUB_MECANICA.png" class="img-fluid">
-                               <img src="img/modal/dub/DUB_CONCESSIONARIA.png" class="img-fluid">
-                               <img src="img/modal/dub/DUB_ROUPAS1.png" class="img-fluid">
-                               <img src="img/modal/dub/DUB_SPAWN.png" class="img-fluid">
+                               <img src="img/modal/pizzaflordovale/flordovale.png" class="img-fluid">
+                               <img src="img/modal/pizzaflordovale/PAIS.png" class="img-fluid">
+                               <img src="img/modal/pizzaflordovale/pizza campo grande.png" class="img-fluid">
+                               <img src="img/modal/pizzaflordovale/placa de vidro.png" class="img-fluid">
                             </div>
                             <!-- <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -172,7 +297,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" style="position:relative;margin-left: 95%; margin-top: 1%;"></button>
                             
                             <div class="modal-body" style="text-align: center;">
-                               <h2>Contrução do DesignUI/UX</h2>
+                               <!-- <h2>Contrução do DesignUI/UX</h2> -->
                                <p></p>
                                <img src="img/modal/dub/DUB_BARBER1.png" class="img-fluid">
                                <img src="img/modal/dub/DUB_MECANICA.png" class="img-fluid">
@@ -200,11 +325,16 @@
                         <div class="modal-body" style="text-align: center;">
                            <h2>Contrução do DesignUI/UX</h2>
                            <p></p>
-                           <img src="img/modal/dub/DUB_BARBER1.png" class="img-fluid">
-                           <img src="img/modal/dub/DUB_MECANICA.png" class="img-fluid">
-                           <img src="img/modal/dub/DUB_CONCESSIONARIA.png" class="img-fluid">
-                           <img src="img/modal/dub/DUB_ROUPAS1.png" class="img-fluid">
-                           <img src="img/modal/dub/DUB_SPAWN.png" class="img-fluid">
+                                <img src="img/modal/compact/1.png" class="img-fluid">
+                               <img src="img/modal/compact/2.png" class="img-fluid">
+                               <img src="img/modal/compact/3.png" class="img-fluid">
+                               <img src="img/modal/compact/4.png" class="img-fluid">
+                               <img src="img/modal/compact/5.png" class="img-fluid">
+                               <img src="img/modal/compact/6.png" class="img-fluid">
+                               <img src="img/modal/compact/7.png" class="img-fluid">
+                               <img src="img/modal/compact/8.png" class="img-fluid">
+                               <img src="img/modal/compact/9.png" class="img-fluid">
+                               <img src="img/modal/compact/10.png" class="img-fluid">
                         </div>
                         <!-- <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -217,27 +347,82 @@
         </div>
     </section>
 
-    <!-- Sobre Mim -->
-    <section id="sobre-mim">
-        <h2 class="section-title">Sobre Mim</h2>
-        <p>Profissional com mais de 10 anos de experiência nas áreas de TI, Marketing e Design UX/UI. Especialista em desenvolvimento front-end, com forte conhecimento em linguagens de programação como HTML5, CSS3, JavaScript e frameworks modernos como Bootstrap.</p>
-    </section>
-
-    <!-- Habilidades -->
-    <section id="habilidades">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="row">
-            <div class="col-md-4">Design Gráfico</div>
-            <div class="col-md-4">Marketing Digital</div>
-            <div class="col-md-4">Desenvolvimento Web</div>
-            <div class="col-md-4">HTML5 / CSS3 / JavaScript</div>
-            <div class="col-md-4">Bootstrap</div>
+    <section id="servicos">
+        <h2 class="section-title">My Services</h2>
+        <div class="servicos-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;">
+          <!-- Coluna Web -->
+          <div>
+            <h3 style="text-align:center;margin-left:10px;"><strong>Desenvolvimento Web</strong></h3>
+            <div class="pacotes">
+              <div class="pacote">
+                <h4>Landing Page Express</h4>
+                <p>1 página responsiva, entrega rápida (até 7 dias), ideal para campanhas ou apresentação de serviços.</p>
+                <p><strong>A partir de R$ 1.500</strong></p>
+              </div>
+              <div class="pacote destaque">
+                <h4>Site Profissional</h4>
+                <p>De 4 a 6 páginas, design moderno, SEO básico e integrações (WhatsApp, formulários, Pixel).</p>
+                <p><strong>A partir de R$ 4.000</strong></p>
+              </div>
+              <div class="pacote">
+                <h4>E-commerce Leve</h4>
+                <p>Loja virtual completa, carrinho de compras, checkout e gestão simples de produtos.</p>
+                <p><strong>A partir de R$ 8.000</strong></p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Coluna Design -->
+          <div>
+            <h3 style="text-align:center;margin-left:10px;"><strong>Design & Identidade Visual</strong></h3>
+            <div class="pacotes">
+              <div class="pacote">
+                <h4>Criação de Marca (Básica)</h4>
+                <p>Logo simples, versão colorida e monocromática, entrega em PNG, SVG, PDF, JPG e EPS.</p>
+                <p><strong>A partir de R$ 200</strong></p>
+              </div>
+              <div class="pacote destaque">
+                <h4>Identidade Visual Completa</h4>
+                <p>Logo, paleta de cores, tipografia, mockups e guia de aplicação + Pack completo no cloud (Google Drive, MediaFire...) para baixar quando quiser.</p>
+                <p><strong>A partir de R$ 600</strong></p>
+              </div>
+              <div class="pacote">
+                <h4>Artigos Gráficos (Orçamento)</h4>
+                <p>Peças avulsas, impressos, banners, posts e materiais para campanha — orçamento personalizado conforme necessidade.</p>
+                <a href="https://wa.me/5561991513438?text=Ol%C3%A1%20Rayron%2C%20quero%20um%20or%C3%A7amento%20para%20artigos%20gr%C3%A1ficos." class="btn">ORÇAMENTO</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre">
+        <img src="img/rayron.jpg" alt="Foto de Rayron Leal">
+        <div class="texto">
+        <h2>Sobre mim</h2>
+        <p>Sou um profissional com mais de 10 anos de experiência nas áreas de <strong>TI, Marketing e Design UX/UI</strong>. Especialista em desenvolvimento front-end, domino linguagens como <strong>HTML5, CSS3, JavaScript</strong> e frameworks modernos como <strong>Bootstrap</strong>. Tenho um perfil criativo e estratégico, unindo design e performance para entregar sites que realmente convertem e refletem a identidade de cada marca.</p>
+        <div class="skills">
+        <span class="skill">HTML5</span>
+        <span class="skill">CSS3</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Bootstrap</span>
+        <span class="skill">UI/UX Design</span>
+        <span class="skill">Adobe CC</span>
+        <span class="skill">CorelDraw</span>
+        </div>
+        </div>
+        </section>
+
 </main>
+<div id="contato">
+    <h2>Vamos conversar sobre seu projeto?</h2>
+    <p>Clique no botão abaixo e fale comigo agora mesmo no WhatsApp.</p>
+    <a href="https://wa.me/5561991513438" class="btn">Falar no WhatsApp</a>
+</div>
 
 <footer>
-    <p>&copy; 2025 Rayron Leal Lima</p>
+    <p>&copy; 2025 Developer Rayron Leal Lima | <a href="https://www.behance.net/rllproducoes" target="_blank">Meu Portfólio no Behance</a></p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

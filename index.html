@@ -145,12 +145,12 @@
         /* Live Stream Section */
         #live-stream {
             display: none;
-            background: linear-gradient(135deg, #9146ff 0%, #6441a5 100%);
+            background: linear-gradient(135deg, #17d611 0%, #4da541 100%);
             color: white;
             padding: 40px 20px;
             margin: 30px 0;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(145, 70, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(76, 255, 70, 0.3);
             text-align: center;
         }
 
@@ -161,10 +161,10 @@
 
         @keyframes pulse {
             0%, 100% {
-                box-shadow: 0 4px 15px rgba(145, 70, 255, 0.3);
+                box-shadow: 0 4px 15px rgba(92, 255, 70, 0.3);
             }
             50% {
-                box-shadow: 0 4px 25px rgba(145, 70, 255, 0.6);
+                box-shadow: 0 4px 25px rgba(76, 255, 70, 0.6);
             }
         }
 
@@ -232,7 +232,7 @@
           <!-- Texto -->
           <div class="d-flex flex-column align-items-center align-items-md-start">
             <h1 class="mb-1 fw-bold" style="font-size: 2.2rem;">Rayron Leal Lima</h1>
-            <p class="text-secondary mb-0">Web Developer | Designer Gráfico</p>
+            <p class="text-secondary mb-0">Web Developer | Designer Gráfico | Streamer</p>
           </div>
       
         </div>
@@ -252,7 +252,7 @@
     <section id="live-stream">
         <h2>
             <span class="live-indicator"></span>
-            AO VIVO AGORA!
+            ESTOU AO VIVO AGORA!
         </h2>
         <p>Assista minha live agora mesmo!</p>
         <div class="live-player-container" id="live-player">
@@ -512,7 +512,7 @@
 <script>
     // Configuração - Altere aqui seus nomes de usuário
     const CONFIG = {
-        twitchUsername: 'djr61', // Substitua pelo seu usuário da Twitch
+        // twitchUsername: 'djr61', // Substitua pelo seu usuário da Twitch
         kickUsername: 'djr61',     // Substitua pelo seu usuário do Kick.com
         checkInterval: 60000,                 // Verifica a cada 60 segundos
         preferTwitch: true                    // Prioriza Twitch se ambas estiverem live
@@ -521,30 +521,30 @@
     const liveStreamSection = document.getElementById('live-stream');
     const livePlayerContainer = document.getElementById('live-player');
 
-    // Função para verificar status na Twitch
-    async function checkTwitchStatus(username) {
-        try {
-            // Método 1: Usando decapi.me
-            try {
-                const response = await fetch(`https://decapi.me/twitch/uptime/${username}`);
-                const data = await response.text();
+    // // Função para verificar status na Twitch
+    // async function checkTwitchStatus(username) {
+    //     try {
+    //         // Método 1: Usando decapi.me
+    //         try {
+    //             const response = await fetch(`https://decapi.me/twitch/uptime/${username}`);
+    //             const data = await response.text();
                 
-                // Se retornar algo diferente de "offline" ou estiver vazio, está ao vivo
-                if (data && !data.toLowerCase().includes('offline') && data.trim() !== '' && !data.toLowerCase().includes('user not found')) {
-                    return { isLive: true, platform: 'twitch', username: username };
-                }
-            } catch (e) {
-                console.log('Método 1 da Twitch falhou, tentando método alternativo...');
-            }
+    //             // Se retornar algo diferente de "offline" ou estiver vazio, está ao vivo
+    //             if (data && !data.toLowerCase().includes('offline') && data.trim() !== '' && !data.toLowerCase().includes('user not found')) {
+    //                 return { isLive: true, platform: 'twitch', username: username };
+    //             }
+    //         } catch (e) {
+    //             console.log('Método 1 da Twitch falhou, tentando método alternativo...');
+    //         }
             
-            // Método 2: Verificação direta através do embed (verifica se o player carrega)
-            // Se chegou aqui, assumimos que não está ao vivo
-            return { isLive: false, platform: 'twitch' };
-        } catch (error) {
-            console.error('Erro ao verificar Twitch:', error);
-            return { isLive: false, platform: 'twitch' };
-        }
-    }
+    //         // Método 2: Verificação direta através do embed (verifica se o player carrega)
+    //         // Se chegou aqui, assumimos que não está ao vivo
+    //         return { isLive: false, platform: 'twitch' };
+    //     } catch (error) {
+    //         console.error('Erro ao verificar Twitch:', error);
+    //         return { isLive: false, platform: 'twitch' };
+    //     }
+    // }
 
     // Função para verificar status no Kick.com
     async function checkKickStatus(username) {
